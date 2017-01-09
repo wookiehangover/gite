@@ -9,6 +9,7 @@ const CommitEditor = React.createClass({
   onSubmit (event) {
     event.preventDefault()
     this.props.commit(this.state.message)
+    this.setState({ message: '' })
   },
   onChange (event) {
     this.setState({ message: event.target.value })
