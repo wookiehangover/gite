@@ -6,7 +6,7 @@ import Diff from './Diff'
 
 const styles = {
   container: `flex flex-column justify-between h-100`,
-  diff: `w-100 h5 pt3 light-green bg-near-black overflow-y-scroll flex-auto`,
+  diff: `w-100 h5 pt3 light-green overflow-y-scroll flex-auto`,
   commit: `w-100 h-50 h-25-xl bottom-0 bt flex pb1 bt bw2 b--dark-gray overflow-hidden`
 }
 

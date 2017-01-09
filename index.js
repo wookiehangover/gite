@@ -19,7 +19,8 @@ function createMainWindow () {
   const win = new electron.BrowserWindow({
     width: 800,
     height: 800,
-    titleBarStyle: 'hidden-inset'
+    titleBarStyle: 'hidden-inset',
+    transparent: true
   })
 
   win.loadURL(`file://${__dirname}/index.html`)
@@ -42,5 +43,5 @@ app.on('activate', () => {
 
 app.on('ready', () => {
   mainWindow = createMainWindow()
-  // mainWindow.postMessage('hello world!!!')
+  mainWindow.setVibrancy('dark')
 })
