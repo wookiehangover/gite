@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react'
 import FileLink from './FileLink'
 
 const styles = {
-  container: `overflow-y-scroll bg-near-white`,
-  list: `list w-100 pa0 ma0 f6 mv2`,
-  listItem: `bb b--light-gray bg-animate hover-bg-moon-gray`,
-  link: `mv1 ph2 link blue db code`
+  container: `overflow-y-scroll`,
+  list: `list w-100 pa0 ma0 f6`,
+  listItem: `bb b--dark-gray bg-animate hover-bg-black`,
+  link: `pv1 ph2 link blue db code`
 }
 
 const FileList = ({ files=[], className='', onClick, onDoubleClick }) =>

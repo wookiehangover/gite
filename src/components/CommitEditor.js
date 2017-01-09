@@ -1,5 +1,12 @@
 import React from 'react'
 
+const styles = {
+  container: `w-third flex flex-column justify-between bg-black-80`,
+  textarea: `input-reset w-100 h-100 flex-auto bn code outline-0 pa3 f6 bg-transparent white`,
+  controls: `pa1`,
+  button: `fr f6 ph4 pv1 ba b--gray br1 pointer bg-transparent blue`
+}
+
 const CommitEditor = React.createClass({
   getInitialState () {
     return {
@@ -16,10 +23,10 @@ const CommitEditor = React.createClass({
   },
   render () {
     return (
-      <form className={`w-third flex flex-column justify-between`} onSubmit={this.onSubmit}>
-        <textarea className={`input-reset w-100 h-100 flex-auto bn code outline-0 pa3 f6`} onChange={this.onChange} value={this.state.message} />
-        <div className={`pa1`}>
-          <button type="submit" className={`fr`}>Commit</button>
+      <form className={styles.container} onSubmit={this.onSubmit}>
+        <textarea className={styles.textarea} onChange={this.onChange} value={this.state.message} />
+        <div className={styles.controls}>
+          <button type="submit" className={styles.button}>Commit</button>
         </div>
       </form>
     )

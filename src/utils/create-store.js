@@ -10,7 +10,7 @@ export default function () {
 
   const store = createStore(
     reducers,
-    applyMiddleware(thunk, promise, logger)
+    applyMiddleware(thunk, logger)
   )
 
   store.dispatch(
