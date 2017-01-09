@@ -27,7 +27,7 @@ const Line = ({ line }) => {
 const Diff = ({ data = [], changes = [], path = '' }) => {
   const chunks = data
   return (
-    <div className={`center pv3 ph4`}>
+    <div className={`pv3 ph4 flex flex-column h-100`}>
       <style>
       {`
         .addition:before { content: '+ '; color: #444; }
@@ -39,20 +39,23 @@ const Diff = ({ data = [], changes = [], path = '' }) => {
         {path}
       </h3>
 
-      <pre className={`code lh-copy`} style={{ fontSize: '0.775rem' }}>
-        {map(chunks, (chunk, i) => {
-          const lines = chunk.split('\n')
-          const changeset = changes[i]
-          return (
-            <div className={`bb b--dark-gray pb2 mb2`}>
-              <span className={`white db bb b--dark-blue mv2 pb2`}>{changeset}</span>
-              {lines.map((line, i) =>
-                <Line line={line} key={i} />
-              )}
-            </div>
-          )
-        })}
-      </pre>
+      {chunks.length === 0 ?
+        (<h1 className={`fw3 tc pa3 ba b--gray br3 dib gray ph5 o-60`} style={{ margin: 'auto' }}>No changes</h1>) :
+        <pre className={`code lh-copy ma0`} style={{ fontSize: '0.775rem' }}>
+          {map(chunks, (chunk, i) => {
+            const lines = chunk.split('\n')
+            const changeset = changes[i]
+            return (
+              <div className={`bb b--dark-gray pb2 mb2`}>
+                <span className={`white db bb b--dark-blue mv2 pb2`}>{changeset}</span>
+                {lines.map((line, i) =>
+                  <Line line={line} key={i} />
+                )}
+              </div>
+            )
+          })}
+        </pre>
+      }
     </div>
   )
 }
