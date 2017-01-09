@@ -24,7 +24,7 @@ const CommitEditor = React.createClass({
   render () {
     return (
       <form className={styles.container} onSubmit={this.onSubmit}>
-        <textarea className={styles.textarea} onChange={this.onChange} value={this.state.message} />
+        <textarea className={styles.textarea} onChange={this.onChange} value={this.state.message} style={{ resize: 'none' }}/>
         <div className={styles.controls}>
           <button type="submit" className={styles.button}>Commit</button>
         </div>

@@ -17,12 +17,12 @@ const repo = (state={}, action) => {
       })
 
     case RECEIVE_FILE_DIFF:
-      let diff = payload
-      let parts = payload.split(/@@(.*)@@/)
-      let changes = ''
-      if (parts.length === 3) {
-        changes = parts[1]
-        diff = parts[2]
+      let diff = [ payload ]
+      let changes = []
+      let parts = payload.split(/@(@.+@)@/)
+      if (parts.length >= 2) {
+        diff = parts.slice(1).filter(line => !/@/.test(line))
+        changes = parts.slice(1).filter(line => /@/.test(line))
       }
       return Object.assign({}, state, {
         diff,

@@ -5,7 +5,7 @@ const styles = {
   container: `overflow-y-scroll`,
   list: `list w-100 pa0 ma0 f6`,
   listItem: `bb b--dark-gray bg-animate hover-bg-black`,
-  link: `pv1 ph2 link blue db code`
+  link: `pv2 ph3 link blue db code`
 }
 
 const FileList = ({ files=[], className='', onClick, onDoubleClick }) =>
