@@ -1,6 +1,6 @@
 # gite
 
-> My praiseworthy app
+> Like gitx, but dumber
 
 
 ## Dev
