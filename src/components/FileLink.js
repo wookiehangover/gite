@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
-const FileLink = ({ file, onClick, onDoubleClick, styles}) =>
-  <li className={styles.listItem} key={file.path}>
+const FileLink = ({ file, onClick, onDoubleClick, styles }) =>
+  <li className={styles.listItem}>
     <a href="#"
       className={styles.link}
       style={{ fontSize: '0.775rem' }}

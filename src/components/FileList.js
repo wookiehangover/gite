@@ -11,8 +11,8 @@ const styles = {
 const FileList = ({ files=[], className='', onClick, onDoubleClick }) =>
   <div className={`${styles.container} ${className}`}>
     <ul className={styles.list}>
-      {files.map(file =>
-        <FileLink file={file} onClick={onClick} onDoubleClick={onDoubleClick} styles={styles} />
+      {files.map((file, i) =>
+        <FileLink file={file} onClick={onClick} onDoubleClick={onDoubleClick} styles={styles} key={i} />
       )}
     </ul>
   </div>

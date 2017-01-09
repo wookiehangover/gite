@@ -53,8 +53,6 @@ export const commit = (message) => {
   }
 }
 
-
-
 export const fetchDiff = (path, index) => {
   return dispatch => {
     const options = [ path ]

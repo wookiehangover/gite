@@ -4,14 +4,13 @@ import map from 'lodash/map'
 const Diff = ({ data='' }) => {
   const lines = data.split('\n')
   return (
-    <div className={`center pa4`}>
-    <style>
-      {`.addition:before { content: '+ '; color: #444; }
-        .deletion:before { content: '- '; color: #444; }
-      `}
-    </style>
+    <div className={`center pv3 ph4`}>
+    <style>{`
+      .addition:before { content: '+ '; color: #444; }
+      .deletion:before { content: '- '; color: #444; }
+    `}</style>
       <pre className={`code lh-copy`} style={{ fontSize: '0.775rem' }}>
-        {map(lines, line => {
+        {map(lines, (line, i) => {
           const addition = /^\+/.test(line)
           const deletion = /^\-/.test(line)
           let theme = ''
@@ -25,7 +24,7 @@ const Diff = ({ data='' }) => {
             textContent = textContent.replace(/^(\-)/, '')
           }
           return (
-            <span className={`bg-animate hover-bg-dark-gray db ${theme}`}>
+            <span className={`bg-animate hover-bg-dark-gray db ${theme}`} key={i}>
               {textContent}
             </span>
           )
